@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: #050b19;
+    color: #f8fafc;
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply rounded-3xl border border-white/10 bg-white/5 p-6 shadow-[0_20px_60px_rgba(2,11,26,0.55)] backdrop-blur-xl;
+  }
+
+  .theme-dawn {
+    @apply bg-gradient-to-br from-[#0b1d3a] via-[#102a4b] to-[#174d6a];
+  }
+
+  .theme-sunset {
+    @apply bg-gradient-to-br from-[#2b0c0c] via-[#4c1d18] to-[#1f2937];
+  }
+
+  .theme-night {
+    @apply bg-gradient-to-br from-[#020b1a] via-[#0b1425] to-[#0f172a];
+  }
+
+  .light-mode {
+    @apply text-slate-900;
+  }
+
+  .light-mode .glass-panel,
+  .light-mode .bg-white\/5,
+  .light-mode .bg-white\/10 {
+    @apply bg-white/70 text-slate-900;
+  }
+}
+
+.bg-mosque {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300"><rect width="1200" height="300" fill="%23050b19"/><path d="M0 240h1200v60H0z" fill="%230f172a"/><path d="M80 240V140h80v100zM260 240V120h90v120zM470 240V90h120v150zM710 240V130h90v110zM910 240V100h120v140z" fill="%231e293b"/><path d="M120 140c0-30 25-55 55-55s55 25 55 55" fill="%231e293b"/><path d="M520 90c0-45 40-82 90-82s90 37 90 82" fill="%231e293b"/></svg>');
+  background-size: cover;
+  background-position: center bottom;
+}
+
+.star {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(255,255,255,0.9), rgba(255,255,255,0));
+  animation: twinkle 5s infinite ease-in-out;
+}
+
+.glow-burst {
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(circle, rgba(251,191,36,0.4), transparent 60%);
+  filter: blur(10px);
+  z-index: -1;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}

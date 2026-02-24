@@ -1,0 +1,19 @@
+{
+    "name": "NoorTimer",
+    "short_name": "NoorTimer",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#050b19",
+    "theme_color": "#0f172a",
+    "icons": [{
+            "src": "/musfiq.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/musfiq.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
